@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obligatorio Esteban Recayte</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="cabezal" class="clearfix">
+        <img
+          id="logo"
+          src="https://p1.develotion.com/2023_03/logo.jpg"
+          alt="logo"
+        />
+        <ul id="navPrincipal">
+          <li id="btnSeccionInicio" class="btn">
+            <a>Inicio</a>
+          </li>
+          <li id="btnSeccionAccesoCensista" class="btn">
+            <a>Acceso Censista</a>
+          </li>
+          <li id="btnSeccionInvitado" class="btn">
+            <a>Invitado</a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="contenido">
+        <div id="seccionInicio" class="seccion">
+          <h1>Censo 2023</h1>
+          <img src="https://p1.develotion.com/2023_03/foto1.webp" />
+        </div>
+        <div id="seccionAccesoCensista" class="seccion">
+          <h1>Registro Censista</h1>
+          <label for="txtNombreR">Nombre:</label>
+          <input type="text" id="txtNombreR" />
+          <br />
+          <label for="txtUsuarioR">Usuario:</label>
+          <input type="text" id="txtUsuarioR" />
+          <br />
+          <label for="txtContrasenaR">Contraseña:</label>
+          <input type="password" id="txtContrasenaR" />
+          <br /><br />
+          <p id="pMensajeRegistro"></p>
+          <input type="button" value="Registrarse" id="btnRegistrarse" />
+          <br />
+
+          <h1>Iniciar sesión</h1>
+
+          <label for="txtUsuario">Usuario:</label>
+          <input type="text" id="txtUsuario" />
+          <br />
+          <label for="txtContrasena">Contraseña:</label>
+          <input type="password" id="txtContrasena" />
+          <br /><br />
+          <p id="pMensajeInicioSesion"></p>
+          <input type="button" value="Ingresar" id="btnIngresar" />
+        </div>
+        <div id="seccionCensista" class="seccion">
+          <div id="cabezal" class="clearfix">
+            <ul id="navPrincipal">
+              <li id="btnSeccionCensosAsignados" class="btn">
+                <a>Censos Asignados</a>
+              </li>
+              <li id="btnSeccionInformacion" class="btn">
+                <a>Informacion Estadistica</a>
+              </li>
+            </ul>
+          </div>
+          <h1>Sección del Censista</h1>
+          <h2 id="hSaludo"></h2>
+          <br /><br /><br />
+          <h3>Nuevo Censo</h3>
+          <br /><br />
+          <label for="txtNombreC">Nombre:</label>
+          <input type="text" id="txtNombreC" />
+          <br /><br />
+          <label for="txtApellidoC">Apellido:</label>
+          <input type="text" id="txtApellidoC" />
+          <br /><br />
+          <label for="txtEdadC">Edad:</label>
+          <input type="text" id="txtEdadC" />
+          <br /><br />
+          <label for="txtCedulaC">Cédula:</label>
+          <input type="text" id="txtCedulaC" />
+          <br /><br />
+          <label for="slcDepartamento">Departamento de residencia:</label>
+          <select id="slcDepartamento"></select>
+          <br /><br />
+          <label for="slcOcupacion">Ocupación:</label>
+          <select id="slcOcupacion">
+            <option value="" disabled selected>Seleccione...</option>
+            <option value="Dependiente">Dependiente</option>
+            <option value="Independiente">Independiente</option>
+            <option value="Estudiante">Estudiante</option>
+            <option value="No trabaja">No trabaja</option>
+          </select>
+          <br /><br />
+          <input type="button" value="Cargar Datos" id="btnCargarDatosCenso" />
+          <br /><br />
+          <p id="pMensajeCensado"></p>
+          <br /><br /><br /><br />
+          <label for="txtCiChequear"
+            >Consultar censo precargado ingrese CI:</label
+          >
+          <input type="text" id="txtCiChequear" />
+          <br />
+          <input type="button" id="btnChequearCi" value="Verificar" />
+          <br /><br />
+          <p id="pChequeoCi"></p>
+          <br /><br /><br />
+        </div>
+        <div id="seccionCensosAsignados" class="seccion">
+          <h1>Censos <a href=""></a>signados transferir a otro censista</h1>
+          <input
+            type="button"
+            value="Click para cargar datos"
+            id="btnCargarDatosCensosAsignados"
+          />
+          <br /><br />
+          <label for="slcCensosAsignados">Censos asignados: </label>
+          <select name="" id="slcCensosAsignados"></select>
+          <br /><br />
+          <label for="slcCensistas">Censistas disponibles: </label>
+          <select name="" id="slcCensistas"></select>
+          <br /><br />
+          <input
+            type="button"
+            value="Transferir Persona"
+            id="btnTransferirCenso"
+          />
+          <br /><br />
+          <p id="pMensajeTransferir"></p>
+        </div>
+        <div id="seccionInformacion" class="seccion">
+          <h1>Informacion Estadistica</h1>
+          <div id="contenedorDeTabla"></div>
+          <br /><br />
+          <div id="contenedorDeTablaPorDepartamento"></div>
+          <br /><br />
+          <select id="seleccionarDepartamentoCombo"></select>
+          <input
+            type="button"
+            value="Click para seleccionar departamento"
+            id="btnSeleccionarDepartamento"
+          />
+          <br /><br />
+          <p id="pMensajePorDepto"></p>
+        </div>
+        <div id="seccionInvitado" class="seccion">
+          <div id="cabezal" class="clearfix">
+            <ul id="navPrincipal">
+              <li id="btnSeccionReporteEstadistico" class="btn">
+                <a>Reporte Estadistico</a>
+              </li>
+            </ul>
+          </div>
+
+          <h1>Invitado</h1>
+          <h2>Bienvenido</h2>
+          <br /><br /><br />
+          <label for="txtCiInvitado"
+            >Ingrese su documento para verificar si ya fue censado o continuar
+            su censo</label
+          >
+          <br /><br />
+          <input type="text" id="txtCiInvitado" />
+          <br /><br />
+          <input type="button" value="Verificar" id="btnVerificarCiInvitado" />
+          <br /><br /><br />
+          <p id="pMensajeInvitado"></p>
+          <h1>
+            En caso de querer realizar un nuevo censo completar formulario
+          </h1>
+          <h3>Nuevo Censo</h3>
+          <br /><br />
+          <div id="contenedorInvitado">
+            <label for="txtNombreCI">Nombre:</label>
+            <input type="text" id="txtNombreCI" />
+            <br /><br />
+            <label for="txtApellidoCI">Apellido:</label>
+            <input type="text" id="txtApellidoCI" />
+            <br /><br />
+            <label for="txtEdadCI">Edad:</label>
+            <input type="text" id="txtEdadCI" />
+            <br /><br />
+            <label for="txtCedulaCI">Cédula:</label>
+            <input type="text" id="txtCedulaCI" />
+            <br /><br />
+            <label for="slcDepartamentoI">Departamento de residencia:</label>
+            <select id="slcDepartamentoI"></select>
+            <br /><br />
+            <label for="slcOcupacionI">Ocupación:</label>
+            <select id="slcOcupacionI">
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="Dependiente">Dependiente</option>
+              <option value="Independiente">Independiente</option>
+              <option value="Estudiante">Estudiante</option>
+              <option value="No trabaja">No trabaja</option>
+            </select>
+          </div>
+          <br /><br />
+          <input
+            type="button"
+            value="Cargar Datos"
+            id="btnCargarDatosCensoInvitado"
+          />
+          <br /><br />
+          <br /><br />
+          <input
+            type="button"
+            value="Borrar Datos"
+            id="btnBorrarDatosCensoInvitado"
+          />
+          <br /><br />
+          <p id="pMensajeCensadoInvitado"></p>
+          <br /><br /><br /><br />
+        </div>
+
+        <div id="seccionReporteEstadistico" class="seccion">
+          <h1>Reporte estadistico</h1>
+          <br /><br />
+          <div id="contenedorInvitadoReporte"></div>
+          <br /><br />
+        </div>
+      </div>
+      <div id="pie">
+        <a href="https://www.linkedin.com/in/estebanrecayte/"
+          >Esteban Recayte</a
+        >
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
